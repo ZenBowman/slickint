@@ -5,9 +5,9 @@ A way to deal with tables with more than 22 columns using Scala's slick ORM
 
 Scala case classes and tuples have a hard limit of 22 elements, which makes using Slick for tables > 22 elements hard. SlickInt allows you to get around this problem a little easier.
 
-Step 1: Obtain the slickint.py class in this repo
+## Step 1: Obtain the slickint.py class in this repo
 
-Step 2: Write out your interface class (example below)
+## Step 2: Write out your interface class (example below)
 ```
 package com.hulu.jobscheduler.logmanager
 import scala.slick.driver.MySQLDriver.simple._
@@ -43,7 +43,7 @@ There are three types of lines:
 * A table header line, this starts with "table" and must have the (table, primaryKey, dbname, *) attributes defined
 * Any other line, which is reproduced as it appears (useful for declaring package and import information)
 
-Step 3: Generate the Slick object with the following command:
+## Step 3: Generate the Slick object with the following command:
 ```
 python slickint.py [input-filename].slickint > [output-filename].scala
 ```
