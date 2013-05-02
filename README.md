@@ -9,7 +9,7 @@ Scala case classes and tuples have a hard limit of 22 elements, which makes usin
 
 ## Step 2: Write out your interface class (example below)
 ```
-package com.hulu.jobscheduler.logmanager
+package org.zenbowman.slickdemo
 import scala.slick.driver.MySQLDriver.simple._
 import java.sql.Date
 table=Job, primaryKey=jobId, dbname=job, *=jobId ~ name ~ dependsOn ~ jobType ~ runPriority ~ isKPI
@@ -51,7 +51,7 @@ python slickint.py [input-filename].slickint > [output-filename].scala
 For the above interface definition, the following class will be generated:
 
 ```scala
-package com.hulu.jobscheduler.logmanager
+package org.zenbowman.slickdemo
 import scala.slick.driver.MySQLDriver.simple._
 import java.sql.Date
 object Job extends Table[(Int, String, Option[Int], Option[Int], Int, Int)]("job") {
